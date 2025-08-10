@@ -1,0 +1,2176 @@
+﻿<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="Wimpy Player" />
+<link rel="icon" href="icon.png">
+<title>معلم الأجيال</title>
+<style>
+
+body{
+
+height: 100%;
+margin: 0;
+
+
+background-image: url('background2.jpg');
+
+
+}
+    a{
+        cursor:cell;
+    }
+    .mainmenu li{
+        color:blue;
+        float:right;
+    }
+    .mainmenu a{
+        display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 12px;
+  text-decoration: none;
+  font-weight:bold;
+    }
+    .mainmenu ul{
+        list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+background-color:black;
+    }
+ .mainmenu   li a:hover {
+  background-color: rgb(45, 36, 160);
+  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+}
+
+.mainmenu .audiomenu {
+    float:left;
+    display:inline;
+width:5%;
+    padding: 3px 4px;
+}
+
+.mainmenu{
+    width:100%;
+}
+.mainmenu .audiomenu audio {
+    width:100px; 
+    cursor:cell;
+    height:40px;
+}
+.introduction{
+    margin:5px 2px;
+    height:45%;
+    width:100%;
+    /*border: 2px solid rgb(206, 100, 100);
+    background-color: snow;*/
+  
+
+}
+.introduction .img-introduction{
+    height:100%;
+    width:85%;
+    display:inline;
+    user-select: none;
+    pointer-events: none;
+    
+}
+.introduction .text-introduction{
+   
+   position: relative;
+  text-align: center;
+  left:30%;
+    display:inline;
+    user-select: none;
+    pointer-events: none;
+    animation-name: textintroduction;
+  animation-duration: 4s;
+  animation-iteration-count:infinite;
+  animation-direction: alternate;
+  font-weight: bold;
+
+  }
+@keyframes textintroduction{
+  from{color:black}
+  to{ box-shadow:0px 5px skyblue}
+}
+.books{
+    width:100%;
+    height:70%;
+    display:block;
+}
+.books .msgbooks{
+    width:100%;
+    height:8%;
+    
+  
+}
+.books >.msgbooks> .msgbookstext{
+    background-color:rgba(0, 0, 0, 0.7);
+text-align: center;
+font-size: 150%;
+padding:0.36%;
+color:skyblue;
+border: 1px solid yellow;
+text-shadow: 1px 1px white;
+font-family: 'Courier New', Courier, monospace;
+}
+.books> .search{
+    width:100%;
+    height:30px;
+    background-color:rgba(0, 0, 0, 0.7);
+}
+.books> .search >.searchinput{
+    
+    display:inline;
+    float: right;
+  margin-right:1%;
+   
+    background-color:rgba(255, 250, 174, 0.9);
+    border: 2px solid yellow;
+    width:25%;
+    height:90%;
+    text-align: center;
+}
+.books> .search >.searchinput:focus{
+    outline: none !important;
+        border-color: #ff0000;
+        box-shadow: 0 0 10px #719ECE;
+}
+.books> .search >.searchbutton{
+    display:inline;
+    float: right;
+    
+    width:10%;
+    height:90%;
+    background-color:yellow;
+border:none;
+  text-align: center;
+}
+.books> .search >.searchbutton:hover{
+      background-color:gold;
+     border:1px solid wheat;
+ cursor:cell;
+}
+.books> .search >.searchbutton:active{
+      background-color: orange;
+     border:1px solid red;
+}
+.books > .search > .contentbook{
+    display:inline;
+    float: right;
+    margin-right: 1%;
+   /* width:30%;*/
+    height:90%;
+    background-color:wheat;
+border:none;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+width:19%;
+
+}
+.books > .search > .contentbookbyyear{
+    display:inline;
+    float: right;
+    margin-right: 1%;
+    /*width:18%;*/
+    height:90%;
+    background-color:wheat;
+border:none;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width:21%;
+ 
+}
+.books > .search > .contentbookbyalphabet{
+    display:inline;
+    float: right;
+    margin-right: 1%;
+   /* width:10%;*/
+    height:90%;
+    background-color:wheat;
+border:none;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width:19%;
+ 
+}
+.book-card{
+    display: inline-block;
+width:25%;
+min-width: 150px;
+height:max-content;
+border:2px solid darkgoldenrod;
+box-shadow: 3px 3px 10px rgb(0, 0, 0);
+background-color: rgb(255, 234, 188);
+margin-top:2%;
+margin-right: 2%;
+pointer-events: all;
+
+}
+
+.book-card > .bookcardimg{
+width:95.8%;
+min-width:70px;
+max-height:160px;
+height:50%;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:2%;
+ /* box-shadow: 3px 3px 10px rgb(255, 255, 255);*/
+ border: 2px solid black;
+}
+
+.book-card > .describtion > .describtiontext{
+    color:rgb(0, 0, 0);
+    text-align: right;
+    text-shadow: -1px 0 gold, 0 1px gold, 1px 0 gold, 0 -1px gold;
+    font-weight: bold;
+    height: 9.5%;
+    font-size: 15.5px;
+
+}
+.book-card > .describtion > .describtiontext:hover{
+
+    text-shadow: -1px 0 silver, 0 1px silver, 1px 0 silver, 0 -1px silver;
+}
+.book-card > .describtion > .describtiontext1{
+    height:8%  !important;
+    font-size:15px;
+}
+.book-card > .describtion > .readbutton{
+    display:block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width:50%;
+    background-color:rgb(255, 204, 109);
+border:none;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom:1%;
+  text-decoration: none;
+  font-weight: bold;
+}
+.cards{
+    text-align: center;
+}
+.book-card > .describtion .readbutton:hover{
+    border:2px solid red;
+    color:black
+}
+.book-card > .describtion >  .readbutton:active{
+    border:2px solid yellow;
+    color:black
+}
+.book-card > .describtion >  .readbutton:visited{
+    border:2px solid yellow;
+    color:black
+}
+@media only screen and (max-width: 800px) {
+    .book-card > .describtion > .describtiontext{
+        font-size: 14px;
+        height:13%
+   }
+   .book-card > .describtion > .describtiontext1{
+        font-size: 13px;
+        height:10%
+    }
+    .aboutwebsite{
+        background-repeat:repeat-y;
+    }
+}
+.pages{
+    width:100%;
+    height:40px;
+    background-color:rgba(0, 0, 0, 0.7);
+    margin-top:1%;
+}
+.pagesgroup{
+text-align: center;
+padding: 5px 0;
+}
+.page{
+    display:none;
+    border: none;
+    width:4%;
+    height: 70%;
+    min-width: 30px;
+    background-color: wheat;
+    margin-left: 2%;
+
+}
+.page:hover{
+    background-color: gold;
+}
+.page:active{
+    background-color: yellow;
+}
+.menu{
+    display:none;
+}
+.choicesgroup{
+    display: block;
+  position: absolute;
+  
+  background-color: #f9f9f9;
+  width:28%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  background-color: rgb(248, 255, 211);
+  min-width: 150px;
+  border:1px solid black;
+}
+.choice{
+    list-style-type:none;
+    font-weight: bold;
+    padding:7px 0;
+    margin-top: 1px;
+  color:indianred;
+  
+}
+.choice:hover{
+    background-color: gold;
+}
+.choice:active{
+    background-color: yellow;
+}
+.gototop{
+ display:none;
+position:fixed;
+left:95%;
+top:85%;
+width:53px;
+height:48px;
+}
+.about{
+    display:none;
+    width:100%;
+    height:40%;
+}
+.info{
+    width:100%;
+    height:10%;
+    margin:20px 0 ;
+   
+}
+.infoheadingtext{
+    background-color:rgba(0, 0, 0, 0.7);
+text-align: center;
+font-size: 150%;
+padding:0.36%;
+color:skyblue;
+border: 1px solid yellow;
+text-shadow: 1px 1px white;
+font-family: 'Courier New', Courier, monospace;
+}
+.aboutwebsite{
+    height:max-content;
+    border:1px solid gold;
+/*background-color:rgb(255, 255, 255);*/
+   background-image: url('1شعار مهرجان الكرازة 2021.png');
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position-x: center;
+}
+.h1styleinfo{
+    text-align: right;
+  /*  color:goldenrod;*/
+  color:wheat;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 22px;
+    text-shadow: 2px 0 black,0px 2px black ,-2px 0 black, 0 -2px black;
+font-weight: bold;  
+}
+.Logo{
+float:left;
+width:150px;
+height:170px;
+}
+.menuselect{
+ 
+    width:80px;
+height:22px;
+display:none;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+  background-color: rgb(248, 255, 211);
+  border:1px solid black;
+  --mouse-x: 0;
+  --mouse-y: 0;
+  display: none;
+  position: fixed;
+  margin: 0;
+  left: 0;
+  top: 0;
+  /* The following line is responsible for all the magic */
+  transform: translateX(min(var(--mouse-x), calc(100vw - 100%)))
+             translateY(min(var(--mouse-y), calc(100vh - 100%)));
+}
+.menuselect>a{
+    color:gray;
+    font-weight:bold;
+text-align: center;
+margin-top:1px;
+text-decoration: none;
+}
+.menuselect>a:active{
+    color:goldenrod;
+}
+.menuselect>.selectiondata{
+    display:none;
+}
+.nothing{
+    display: none;
+    width:100%;
+    height:200px;
+}
+.p-nothing{
+    font-size:80px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color:brown
+}
+.default{
+    width:25px;
+    height:25px;
+    display:block;
+}
+.default:active{
+border:2px solid yellow;
+}
+</style>
+</head>
+<body lang="ar-EG" onresize="elementssize()" onload="elementssize();pagescount();loadbooks(1);" onscroll="gototop()">
+    <div class="mainmenu">
+      
+        <ul> 
+            <li><a onclick="gotopage('الصفحة الرئيسية')">الصفحة الرئيسية</a></li>                
+            <li><a onclick="gotopage('حول')">حول</a></li>
+            <li style="float:left !important; padding:5px;"><a onclick="gotopage('الصفحة الرئيسية')" style="padding:0px 0px !important;"><img src="icon.png"></a></li>
+          <li class="audiomenu"><audio controls loop>
+ <source src="music.mp3" type="audio/mpeg">
+</audio></li>
+   
+            </ul>
+            
+    </div>
+    
+<div class="introduction">
+   <img src="البابا شنودة الثالث2.png" style="float:right;" class="img-introduction" alt="بسم الآب والابن والروح القدس الإله الواحد آمين
+   مكتبة موجود بها كتب للبابا شنودة الثالث   ">
+</div>
+<div class="books" id="booksarea">
+<div class="msgbooks">
+    <p class="msgbookstext">تصفح الكتب</p>
+</div>
+<br>
+<br>
+<img class="default" src="Default.png" alt="الوضع الافتراضي للبحث" onclick='makedefault()'>
+<div class="search"> 
+<button class="searchbutton" onclick="search();backtofirstpage();checkifalphabet()">بحث</button>
+<input type="text"  placeholder="بحث" class="searchinput">
+<button class="contentbook" dir="rtl" onclick="choosecontent(0,'button');">الموضوع</button>
+<div class="menu">
+    <ul class="choicesgroup" style="right:37%;">
+        <li class="choice" style="background-color:yellow" onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(0,'subject');loadbooks(1);pagescount();SearchBy(undefined,undefined,undefined);checkifalphabet()">&#10062 غير محدد</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(1,'subject');SearchBy('subject','الكتب الروحية' ,undefined);SearchBy(undefined,undefined,1);pagescount();checkifalphabet()">&#128214 الكتب الروحية</li>
+        <ul>
+            <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(2,'subject');SearchBy('subject','الكتب الروحية - روحية عامة' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 روحية عامة</li> 
+            <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(3,'subject');SearchBy('subject','الكتب الروحية - الحروب الروحية' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 الحروب الروحية</li>
+            <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(4,'subject');SearchBy('subject','الكتب الروحية - حياة التوبة',undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 حياة التوبة</li>
+            <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(5,'subject');SearchBy('subject','الكتب الروحية - كلمة منفعة' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 كلمة منفعة</li>
+            <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(6,'subject');SearchBy('subject','الكتب الروحية - سنوات مع أسئلة الناس' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 سنوات مع أسئلة الناس</li>
+              
+        </ul>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(7,'subject');SearchBy('subject','كتب الخدمة' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 كتب الخدمة</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(8,'subject');SearchBy('subject','كتب دراسات كتابية' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 كتب دراسات كتابية</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(9,'subject');SearchBy('subject','كتب شخصيات الكتاب المقدس' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214  كتب شخصيات الكتاب المقدس</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(10,'subject');SearchBy('subject','كتب شخصيات من التاريخ الكنسي' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214  كتب شخصيات من التاريخ الكنسي</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(11,'subject');SearchBy('subject','كتب لاهوتية وعقائدية' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214  كتب لاهوتية وعقائدية</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(12,'subject');SearchBy('subject','كتب مناسبات كنسية' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214  كتب مناسبات كنسية</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(13,'subject');SearchBy('subject','كتب القصص' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214  كتب القصص</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(14,'subject');SearchBy('subject','كتب تأملات في المزامير والصلوات والأجبية' ,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214  كتب تأملات في المزامير والصلوات والأجبية</li>
+        
+        
+    </ul>
+</div>
+<button class="contentbookbyyear" dir="rtl"   onclick="choosecontent(1,'button')">سنة الإصدار</button>
+<div class="menu">
+    <ul class="choicesgroup" style="right:60%;max-width:70px;min-width: 50px  !important;">
+        <li class="choice" style="background-color:yellow" onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};checkifalphabet();choosecontent(0,'yearofcreation');SearchBy(undefined,undefined,undefined)">&#10062 غير محدد</li>
+        <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};checkifalphabet();choosecontent(1,'yearofcreation');SearchBy('yearofcreation',1969,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1969</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(2,'yearofcreation');SearchBy('yearofcreation',1970,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1970</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(3,'yearofcreation');SearchBy('yearofcreation',1971,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1971</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(4,'yearofcreation');SearchBy('yearofcreation',1972,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1972</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(5,'yearofcreation');SearchBy('yearofcreation',1975,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1975</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(6,'yearofcreation');SearchBy('yearofcreation',1977,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1977</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(7,'yearofcreation');SearchBy('yearofcreation',1978,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1978</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(8,'yearofcreation');SearchBy('yearofcreation',1980,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1980</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(9,'yearofcreation');SearchBy('yearofcreation',1981,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1981</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(10,'yearofcreation');SearchBy('yearofcreation',1982,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1982</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(11,'yearofcreation');SearchBy('yearofcreation',1983,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1983</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(12,'yearofcreation');SearchBy('yearofcreation',1984,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1984</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(13,'yearofcreation');SearchBy('yearofcreation',1985,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1985</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(14,'yearofcreation');SearchBy('yearofcreation',1986,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1986</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(15,'yearofcreation');SearchBy('yearofcreation',1987,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1987</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(16,'yearofcreation');SearchBy('yearofcreation',1988,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1988</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(17,'yearofcreation');SearchBy('yearofcreation',1990,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1990</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(18,'yearofcreation');SearchBy('yearofcreation',1991,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1991</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(19,'yearofcreation');SearchBy('yearofcreation',1992,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1992</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(20,'yearofcreation');SearchBy('yearofcreation',1993,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1993</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(21,'yearofcreation');SearchBy('yearofcreation',1994,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1994</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(22,'yearofcreation');SearchBy('yearofcreation',1995,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1995</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(23,'yearofcreation');SearchBy('yearofcreation',1996,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1996</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(24,'yearofcreation');SearchBy('yearofcreation',1997,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1997</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(25,'yearofcreation');SearchBy('yearofcreation',1998,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 1998</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(26,'yearofcreation');SearchBy('yearofcreation',2000,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2000</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(27,'yearofcreation');SearchBy('yearofcreation',2001,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2001</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(28,'yearofcreation');SearchBy('yearofcreation',2002,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2002</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(29,'yearofcreation');SearchBy('yearofcreation',2003,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2003</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(30,'yearofcreation');SearchBy('yearofcreation',2004,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2004</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(31,'yearofcreation');SearchBy('yearofcreation',2005,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2005</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(32,'yearofcreation');SearchBy('yearofcreation',2006,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2006</li>
+ <li class="choice"  onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(33,'yearofcreation');SearchBy('yearofcreation',2007,undefined);SearchBy(undefined,undefined,1);checkifalphabet()">&#128214 2007</li>
+</div>
+<button class="contentbookbyalphabet" dir="rtl" onclick="choosecontent(2,'button');showalphabetmenu();">الابجدية</button>
+<div class="menu">
+    <ul class="choicesgroup" style="right:84%;max-width:50px;min-width: 20px  !important;">
+        <li class="choice" style="background-color:yellow" onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(0,'alphabet');AlphabetClose();checkifalphabet()">&#10062 لا</li>
+        <li class="choice" onclick="if(this.style.backgroundColor!='yellow'){backtofirstpage()};choosecontent(1,'alphabet');SearchBy('alphabet',true,undefined);SearchBy(undefined,undefined,1);pagescount();checkifalphabet()">&#9989 نعم</li>
+    </ul>
+    </div>
+  
+</div>
+<div class="pages">
+    <div class="pagesgroup">
+        <button class="page" onclick="changepage(0);loadbooks(1) ;SearchBy(undefined,undefined,1)">1</button>
+        <button class="page" onclick="changepage(1);loadbooks(2) ;SearchBy(undefined,undefined,2)">2</button>
+        <button class="page" onclick="changepage(2);loadbooks(3) ;SearchBy(undefined,undefined,3)">3</button>
+        <button class="page" onclick="changepage(3);loadbooks(4) ;SearchBy(undefined,undefined,4)">4</button>
+        <button class="page" onclick="changepage(4);loadbooks(5) ;SearchBy(undefined,undefined,5)">5</button>
+        <button class="page" onclick="changepage(5);loadbooks(6) ;SearchBy(undefined,undefined,6)">6</button>
+        <button class="page" onclick="changepage(6);loadbooks(7) ;SearchBy(undefined,undefined,7)">7</button>
+    </div>
+</div>
+<div class="cards" dir="rtl">
+    <!--
+<div class="book-card"> 
+    <img class="bookcardimg" src="books/تاملات في سفر يونان النبي.jpg" alt="تأملات في سفر يونان النبي">
+<div class="describtion">
+    <p class="describtiontext">الاسم:<i>تاملات في سفر يونان النبي</i></p>
+    <p class="describtiontext">سنة الصنع:<i>1999</i></p>
+    <p class="describtiontext">الموضوع:<i>كتب روحانية</i></p>
+    <a class="readbutton" href="">قراءة</a>
+</div>
+</div>
+-->
+
+</div>
+<div class="nothing">
+    <p class="p-nothing">لا يوجد</p>
+</div>
+<div class="pages">
+    <div class="pagesgroup">
+        <button class="page" onclick="changepage(0);loadbooks(1) ;SearchBy(undefined,undefined,1)">1</button>
+        <button class="page" onclick="changepage(1);loadbooks(2) ;SearchBy(undefined,undefined,2)">2</button>
+        <button class="page" onclick="changepage(2);loadbooks(3) ;SearchBy(undefined,undefined,3)">3</button>
+        <button class="page" onclick="changepage(3);loadbooks(4) ;SearchBy(undefined,undefined,4)">4</button>
+        <button class="page" onclick="changepage(4);loadbooks(5) ;SearchBy(undefined,undefined,5)">5</button>
+        <button class="page" onclick="changepage(5);loadbooks(6) ;SearchBy(undefined,undefined,6)">6</button>
+        <button class="page" onclick="changepage(6);loadbooks(7) ;SearchBy(undefined,undefined,7)">7</button>
+    </div>
+</div>
+</div>
+<img class="gototop" src="top.png" onclick="gototop(true)">
+<div class="about">
+<div class="info">
+    <h1 class="infoheadingtext">عن المكتبة</h1>
+</div>
+<div class="aboutwebsite">
+ <!--   <img src="شعار مهرجان الكرازة 2021.png"  class="Logo">-->
+    <h1 class="h1styleinfo">إن للمتنيح قداسة البابا شنودة الثالث الاثر الكبير في نهضة كنيستنا القبطية الأرثوذكسية
+        بما تركه من كتب ومؤلفات وعظات في كل مناهج التعليم الكنسي الروحية والطقسية والتاريخية والعقائدية بمختلف اشكالها
+        وحفاظاً علي هذه الدرر والنفائس لنصل لهذا الجيل المنخرط والشغوف بعالم الميديا المختلفة فقد كانت هذه المكتبة لتكون اداة 
+        وصل بين هذا الدرر والنفائس وبين هذا الجيل راجياً من الله ان ينال رجائكم واعجابكم ويجب علي من يفكر
+        بالقراءة  ان يكون متأنياً شغوف بطلب المعرفة. 
+    </h1>
+    <h1 class="h1styleinfo">
+    المكتبة تحتوي علي 127 كتاب للبابا شنودة الثالث مصنفة حسب الموضوع وسنة الإصدار للكتاب ويمكن 
+    الترتيب حسب الإبجدية والبحث باسم الكتاب فيمكن البحث عن الكتاب بأي مما سبق او بجميعهم ومصصمة لتسهيل البحث 
+    من حيث نوعيتها وموضوعاتها وسنة الإصدار لتسهيل عملية البحث والقراءة كما ان البحث يسمح بكتابة باي حرف من حرفين متشابهين (ه-ة,ا-أ,ي-ى وغيره)
+    كما يمكن نسخ وحفظ الكتب    
+    </h1>
+    
+    <h1 class="h1styleinfo">
+        وقد نال بركة هذا العمل الإبن المبارك مرقس عماد غبريال 
+    </h1>
+</div>
+</div>
+<div class="menuselect" dir="rtl">
+    <a href="#booksarea" onclick="selectforsearch()">تحديد للبحث</a>
+    <p class="selectiondata"></p>
+</div>
+<script>
+//document.getElementsByClassName('choicesgroup')[0].style.right=getComputedStyle(document.getElementsByClassName('contentbook')[0]).right
+booksdata={
+    name:["تأملات فى سفر يونان النبى",
+"كيف نعامل الأطفال",
+"السيدة العذراء",
+"أبانا الذي في السموات",
+"مقالات روحية",
+"خبرات في الحياة الجزء 1",
+"خبرات في الحياة الجزء 2",
+"عشرة مفاهيم",
+"حياة الإيمان",
+"الوسائط الروحية",
+"الروح القدس وعمله فينا",
+"تأملات في حياة القديس أنطونيوس",
+"مَثَل في الرعاية القمص ميخائيل إبراهيم",
+"روحانية الصوم",
+"تسبحة البصخة لك القوة والمجد",
+"كلمات السيد المسيح علي الصليب",
+"تأملات في الميلاد",
+"تأملات في القيامة",
+"كيف نبدأ عاماً جديداً",
+"آدم وحواء - قايين وهابيل",
+"أيوب الصديق ولماذا كانت تجربته",
+"معالم الطريق الروحي",
+"اليقظة الروحية",
+"الدموع في الحياة الروحية",
+"حياة التوبة والنقاوة",
+"شريعة الزوجة الواحدة في المسيحية وأهم مبادئنا في الأحوال الشخصية",
+"طبيعة المسيح",
+"لاهوت المسيح",
+"الخلاص في المفهوم الأرثوذكسي",
+"مثالية وروحانية الصلاة بالأجبية",
+"تأملات في صلاة الشكر والمزمور الخمسين",
+"يستجيب لك الرب",
+"تأملات في مزامير الأجبية – الكتاب الأول – في صلاة الغروب",
+"ناظر الإله الإنجيلي مرقس الرسول القديس والشهيد",
+"تأملات في حياة القديسين يعقوب ويوسف",
+"موسي و فرعون",
+"كلمة منفعة الجزء الأول",
+"كلمة منفعة الجزء الثاني",
+"كلمة منفعة الجزء الثالث",
+"كلمة منفعة الجزء الرابع",
+"إنطلاق الروح",
+"حياة التواضع والوداعة",
+"الخدمة الروحية والخادم الروحي الجزء الأول",
+"الخدمة الروحية والخادم الروحي الجزء الثاني",
+"الخدمة الروحية والخادم الروحي الجزء الثالث",
+"حياة الشكر",
+"محبة المديح والكرامة",
+"حياة الرجاء",
+"يا رب لماذا (مز 3)",
+"التلمذة",
+"الغيرة المقدسة",
+"الحروب الروحية",
+"بدعة الخلاص في لحظة",
+"حروب الشياطين",
+"الرجوع إلى الله",
+"سنوات مع أسئلة الناس - جزء 1",
+"سنوات مع أسئلة الناس - جزء 2",
+"سنوات مع أسئلة الناس - جزء 3",
+"سنوات مع أسئلة الناس - جزء 4",
+"سنوات مع أسئلة الناس - جزء 5",
+"تأملات في مزمور يارب لا تبكتني بغضبك",
+"تأملات في مزامير باكر",
+"تأملات في مزامير وقطع النوم",
+"المحبة قمة الفضائل",
+"مَنْ هو الإنسان",
+"سنوات مع أسئلة الناس - الجزء السادس",
+"سنوات مع أسئلة الناس - الجزء السابع",
+"سنوات مع أسئلة الناس - الجزء الثامن",
+"الإنسان الروحى",
+"كتاب المسابقات - ج1 في الكتاب المقدس",
+"كتاب المسابقات - ج2 في الكتاب المقدس",
+"كتاب المسابقات - ج3 في التاريخ المسيحي وسير القديسين",
+"كتاب المسابقات - ج4 مسابقات في اللاهوت والعقيدة",
+"الغضب",
+"إدانة الآخرين",
+"حياة الفضيلة والبر",
+"السهر الروحى",
+"مخافة الله",
+"أيات للحفظ",
+"كتاب المسابقات - ج5 في الفضائل والخطايا",
+"كتاب المسابقات - ج6 مسابقات متنوعة",
+"كتاب المسابقات - ج7 مسابقات متنوعة",
+"تأملات في سفر الرؤيا",
+"التجربة على الجبل",
+"تأملات في خميس العهد",
+"قانون الإيمان",
+"سنوات مع أسئله الناس - الجزء التاسع",
+"سنوات مع أسئله الناس - الجزء العاشر",
+"سنوات مع أسئلة الناس - مُجَمَّع - أسئلة لاهوتية وعقائدية أ",
+"سنوات مع أسئلة الناس - مُجَمَّع - أسئلة لاهوتية وعقائدية ب",
+"النعمة",
+"الله والإنسان",
+"الله وكفي",
+"الأسرة الروحية السعيدة",
+"مختارات من الأدب والحكمة والأمثال الشعبية",
+"القرآن والمسيحية",
+"الكهنوت",
+"لماذا نرفض المطهر",
+"شهود يهوه وهرطقاتهم",
+"لماذا القيامة",
+"الهدوء",
+"الوجود مع الله",
+"بدع السبتيين الأدفنتست",
+"الأرواح بين الدين وعلماء الروح",
+"منهج روحي متكامل في رومية 12",
+"ثمر الروح",
+"كتاب الوصايا العشر في المفهوم المسيحي 1- الوصايا الأربع الأولى",
+"كتاب الوصايا العشر في المفهوم المسيحي 2- أكرم أباك وأمك",
+"كتاب الوصايا العشر في المفهوم المسيحي 3- لا تقتل",
+"كتاب الوصايا العشر في المفهوم المسيحي 4- الوصايا الأربع الأخيرة",
+"تأملات في أمثال السيد المسيح",
+"تأملات فى العظة على الجبل",
+"بدع حديثه",
+"اللاهوت المقارن - جزء 1",
+"كتاب اللاهوت المقارن (1) كيف تم فداء البشر؟",
+"كتاب اللاهوت المقارن (2) حول سر الإفخارستيا",
+"كتاب اللاهوت المقارن (3) جسد المسيح والجسد السري!",
+"كتاب اللاهوت المقارن (4) محاربة الناموس والأعمال",
+"كتاب اللاهوت المقارن (5أ) تأليه الإنسان!! (الجزء الأول)",
+"كتاب اللاهوت المقارن (5ب) تأليه الإنسان!! (الجزء الثاني) شركاء الطبيعة الإلهية",
+"كتاب اللاهوت المقارن (6) النقد الكتابي",
+"كتاب اللاهوت المقارن (7) التجسد والمساواة مع المسيح والآب!",
+"تأملات في الجمعة العظيمة",
+"تأملات في أسبوع الآلام",
+"ثلاث قصص هادفة",
+"قصة جلسة صاخبة في جامعة سلطان الظلام",
+"سنوات مع أسئلة الناس - أسئلة خاصة بالكتاب المقدس"
+],
+    yearofcreation:[1971,1992,1996,1994,1985,1988,1992,1993,1984,1992,1991,1980,1977,1983,1969,1975 ,1980
+,1990,1982,1980,1998,1987,1982,1994,1984,1978,1991,1991,1980,1998,1990,1981,1969,1975,1996,1990,1980,1980,1980,1986,1983,2001,1993,1994,1994,1988,1972,1991,1988,1987,1986,1988,1988,1984,1982,1982,1982,1990,1990,1990,1995,1995,2001,1993,1995,1991,1993,1994,1992,1993,1997,1998,2000,1993,1987,1994,1982,1994,1993,2002,2004,1993,2005,1995,1982,1996,2001,1988,2001,1996,1997,1997,1982,1998,2000,1970,1985,1988,2000,1998,1986,1982,2007,2006 ,2001,1996,1977,1977,1977,1977,2001,1986,2006,1991,2003,2003,2004,2004,2004,2004,2004,2004,1982,1983,2006,2007,2001],
+subject:["كتب دراسات كتابية",
+"كتب الخدمة",
+"كتب شخصيات الكتاب المقدس",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"كتب شخصيات من التاريخ الكنسي",
+"كتب شخصيات من التاريخ الكنسي",
+"كتب مناسبات كنسية",
+"كتب مناسبات كنسية",
+"كتب مناسبات كنسية",
+"كتب مناسبات كنسية",
+"كتب مناسبات كنسية",
+"كتب مناسبات كنسية",
+"كتب شخصيات الكتاب المقدس",
+"كتب شخصيات الكتاب المقدس",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - حياة التوبة",
+"الكتب الروحية - حياة التوبة",
+"الكتب الروحية - حياة التوبة",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب شخصيات الكتاب المقدس",
+"كتب شخصيات الكتاب المقدس",
+"كتب شخصيات الكتاب المقدس",
+"الكتب الروحية - كلمة منفعة",
+"الكتب الروحية - كلمة منفعة",
+"الكتب الروحية - كلمة منفعة",
+"الكتب الروحية - كلمة منفعة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"كتب الخدمة",
+"كتب الخدمة",
+"كتب الخدمة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب الخدمة",
+"كتب الخدمة",
+"الكتب الروحية - الحروب الروحية",
+"كتب لاهوتية وعقائدية",
+"الكتب الروحية - الحروب الروحية",
+"الكتب الروحية - حياة التوبة",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"كتب تأملات في المزامير والصلوات والأجبية",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - روحية عامة",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"الكتب الروحية - الحروب الروحية",
+"الكتب الروحية - الحروب الروحية",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - حياة التوبة",
+"الكتب الروحية - حياة التوبة",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب مناسبات كنسية",
+"كتب لاهوتية وعقائدية",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"الكتب الروحية - روحية عامة",
+"الكتب الروحية - روحية عامة",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب دراسات كتابية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب لاهوتية وعقائدية",
+"كتب مناسبات كنسية",
+"كتب مناسبات كنسية",
+"كتب القصص",
+"كتب القصص",
+"الكتب الروحية - سنوات مع أسئلة الناس",
+],
+    src:["books/تأملات فى سفر يونان النبى.pdf",
+"books/كيف نعامل الأطفال.pdf",
+"books/السيدة العذراء.pdf",
+"books/أبانا الذي في السموات.pdf",
+"books/مقالات روحية.pdf",
+"books/خبرات في الحياة الجزء 1.pdf",
+"books/خبرات في الحياة الجزء 2.pdf",
+"books/عشرة مفاهيم.pdf",
+"books/حياة الإيمان.pdf",
+"books/الوسائط الروحية.pdf",
+"books/الروح القدس وعمله فينا.pdf",
+"books/تأملات في حياة القديس أنطونيوس.pdf",
+"books/مَثَل في الرعاية القمص ميخائيل إبراهيم.pdf",
+"books/روحانية الصوم.pdf",
+"books/تسبحة البصخة لك القوة والمجد.pdf",
+"books/كلمات السيد المسيح علي الصليب.pdf",
+"books/تأملات في الميلاد.pdf",
+"books/تأملات في القيامة.pdf",
+"books/كيف نبدأ عاماً جديداً.pdf",
+"books/آدم وحواء - قايين وهابيل.pdf",
+"books/أيوب الصديق ولماذا كانت تجربته.pdf",
+"books/معالم الطريق الروحي.pdf",
+"books/اليقظة الروحية.pdf",
+"books/الدموع في الحياة الروحية.pdf",
+"books/حياة التوبة والنقاوة.pdf",
+"books/شريعة الزوجة الواحدة في المسيحية وأهم مبادئنا في الأحوال الشخصية.pdf",
+"books/طبيعة المسيح.pdf",
+"books/لاهوت المسيح.pdf",
+"books/الخلاص في المفهوم الأرثوذكسي.pdf",
+"books/مثالية وروحانية الصلاة بالأجبية.pdf",
+"books/تأملات في صلاة الشكر والمزمور الخمسين.pdf",
+"books/يستجيب لك الرب.pdf",
+"books/تأملات في مزامير الأجبية – الكتاب الأول – في صلاة الغروب.pdf",
+"books/ناظر الإله الإنجيلي مرقس الرسول القديس والشهيد.pdf",
+"books/تأملات في حياة القديسين يعقوب ويوسف.pdf",
+"books/موسي و فرعون.pdf",
+"books/كلمة منفعة الجزء الأول.pdf",
+"books/كلمة منفعة الجزء الثاني.pdf",
+"books/كلمة منفعة الجزء الثالث.pdf",
+"books/كلمة منفعة الجزء الرابع.pdf",
+"books/إنطلاق الروح.pdf",
+"books/حياة التواضع والوداعة.pdf",
+"books/الخدمة الروحية والخادم الروحي الجزء الأول.pdf",
+"books/الخدمة الروحية والخادم الروحي الجزء الثاني.pdf",
+"books/الخدمة الروحية والخادم الروحي الجزء الثالث.pdf",
+"books/حياة الشكر.pdf",
+"books/محبة المديح والكرامة.pdf",
+"books/حياة الرجاء.pdf",
+"books/يا رب لماذا.pdf",
+"books/التلمذة.pdf",
+"books/الغيرة المقدسة.pdf",
+"books/الحروب الروحية.pdf",
+"books/بدعة الخلاص في لحظة.pdf",
+"books/حروب الشياطين.pdf",
+"books/الرجوع إلي الله.pdf",
+"books/سنوات مع أسئلة الناس - جزء 1.pdf",
+"books/سنوات مع أسئلة الناس - جزء 2.pdf",
+"books/سنوات مع أسئلة الناس - جزء 3.pdf",
+"books/سنوات مع أسئلة الناس - جزء 4.pdf",
+"books/سنوات مع أسئلة الناس - جزء 5.pdf",
+"books/تأملات في مزمور يارب لا تبكتني بغضبك.pdf",
+"books/تأملات في مزامير باكر.pdf",
+"books/تأملات في مزامير وقطع النوم.pdf",
+"books/المحبة قمة الفضائل.pdf",
+"books/مَنْ هو الإنسان.pdf",
+"books/سنوات مع أسئلة الناس - جزء 6.pdf",
+"books/سنوات مع أسئلة الناس - جزء 7.pdf",
+"books/سنوات مع أسئلة الناس - جزء 8.pdf",
+"books/الإنسان الروحى.pdf",
+"books/كتاب المسابقات - ج1.pdf",
+"books/كتاب المسابقات - ج2.pdf",
+"books/كتاب المسابقات - ج3.pdf",
+"books/كتاب المسابقات - ج4.pdf",
+"books/الغضب.pdf",
+"books/إدانة الآخرين.pdf",
+"books/حياة الفضيلة والبر.pdf",
+"books/السهر الروحى.pdf",
+"books/مخافة الله.pdf",
+"books/أيات للحفظ.pdf",
+"books/كتاب المسابقات - ج5.pdf",
+"books/كتاب المسابقات - ج6.pdf",
+"books/كتاب المسابقات - ج7.pdf",
+"books/تأملات في سفر الرؤيا.pdf",
+"books/التجربة على الجبل.pdf",
+"books/تأملات في خميس العهد.pdf",
+"books/قانون الإيمان.pdf",
+"books/سنوات مع أسئله الناس - الجزء التاسع.pdf",
+"books/سنوات مع أسئله الناس - الجزء العاشر.pdf",
+"books/سنوات مع أسئلة الناس - مُجَمَّع - أسئلة لاهوتية وعقائدية أ.pdf",
+"books/سنوات مع أسئلة الناس - مُجَمَّع - أسئلة لاهوتية وعقائدية ب.pdf",
+"books/النعمة.pdf",
+"books/الله والإنسان.pdf",
+"books/الله وكفي.pdf",
+"books/الأسرة الروحية السعيدة.pdf",
+"books/مختارات من الأدب والحكمة والأمثال الشعبية.pdf",
+"books/القرآن والمسيحية.pdf",
+"books/الكهنوت.pdf",
+"books/لماذا نرفض المطهر.pdf",
+"books/شهود يهوه وهرطقاتهم.pdf",
+"books/لماذا القيامة.pdf",
+"books/الهدوء.pdf",
+"books/الوجود مع الله.pdf",
+"books/بدع السبتيين الأدفنتست.pdf",
+"books/الأرواح بين الدين وعلماء الروح.pdf",
+"books/منهج روحي متكامل في رومية 12.pdf",
+"books/ثمر الروح.pdf",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 1- الوصايا الأربع الأولى.pdf",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 2- أكرم أباك وأمك.pdf",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 3- لا تقتل.pdf",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 4- الوصايا الأربع الأخيرة.pdf",
+"books/تأملات في أمثال السيد المسيح.pdf",
+"books/تأملات فى العظة على الجبل.pdf",
+"books/بدع حديثه.pdf",
+"books/اللاهوت المقارن - جزء 1.pdf",
+"books/كتاب اللاهوت المقارن (1) كيف تم فداء البشر؟.pdf",
+"books/كتاب اللاهوت المقارن (2) حول سر الإفخارستيا.pdf",
+"books/كتاب اللاهوت المقارن (3) جسد المسيح والجسد السري!.pdf",
+"books/كتاب اللاهوت المقارن (4) محاربة الناموس والأعمال.pdf",
+"books/كتاب اللاهوت المقارن (5أ) تأليه الإنسان!! (الجزء الأول).pdf",
+"books/كتاب اللاهوت المقارن (5ب) تأليه الإنسان!! (الجزء الثاني) شركاء الطبيعة الإلهية.pdf",
+"books/كتاب اللاهوت المقارن (6) النقد الكتابي.pdf",
+"books/كتاب اللاهوت المقارن (7) التجسد والمساواة مع المسيح والآب!.pdf",
+"books/تأملات في الجمعة العظيمة.pdf",
+"books/تأملات في أسبوع الآلام.pdf",
+"books/ثلاث قصص هادفة.pdf",
+"books/قصة جلسة صاخبة في جامعة سلطان الظلام.pdf",
+"books/سنوات مع أسئلة الناس - أسئلة خاصة بالكتاب المقدس.pdf"
+
+],
+    imagesrc:["books/تاملات في سفر يونان النبي.jpg",
+"books/كيف نعامل الاطفال.jpg",
+"books/السيده العذراء.jpg",
+"books/ابانا الذي في السموات.jpg",
+"books/مقالات روحية.jpg",
+"books/خبرات في الحياه الجزء 1.jpg",
+"books/خبرات في الحياه الجزء 2.jpg",
+"books/عشره مفاهيم.jpg",
+"books/حياه الايمان.jpg",
+"books/الوسائط الروحيه.jpg",
+"books/الروح القدس وعمله فينا.jpg",
+"books/تاملات في حياه القديس انطونيوس.jpg",
+"books/مثل في الرعايه القمص ميخائيل ابراهيم.jpg",
+"books/روحانيه الصوم.jpg",
+"books/تسبحه البصخه لك القوه والمجد.jpg",
+"books/كلمات السيد المسيح علي الصليب.jpg",
+"books/تاملات في الميلاد.jpg",
+"books/تاملات في القيامه.jpg",
+"books/كيف نبدا عاما جديدا.jpg",
+"books/ادم وحواء - قايين وهابيل.jpg",
+"books/ايوب الصديق ولماذا كانت تجربته.jpg",
+"books/معالم الطريق الروحي.jpg",
+"books/اليقظه الروحيه.jpg",
+"books/الدموع في الحياه الروحيه.jpg",
+"books/حياه التوبه والنقاوه.jpg",
+"books/شريعه الزوجه الواحده في المسيحيه واهم مبادئنا في الاحوال الشخصيه.jpg",
+"books/طبيعه المسيح.jpg",
+"books/لاهوت المسيح.jpg",
+"books/الخلاص في المفهوم الارثوذكسي.jpg",
+"books/مثاليه وروحانيه الصلاه بالاجبيه.jpg",
+"books/تاملات في صلاه الشكر والمزمور الخمسين.jpg",
+"books/يستجيب لك الرب.jpg",
+"books/تاملات في مزامير الاجبية – الكتاب الاول – في صلاه الغروب.jpg",
+"books/ناظر الاله الانجيلي مرقس الرسول القديس والشهيد.jpg",
+"books/تاملات في حياه القديسين يعقوب ويوسف.jpg",
+"books/موسي و فرعون.jpg",
+"books/كلمه منفعه الجزء الاول.jpg",
+"books/كلمه منفعه الجزء الثاني.jpg",
+"books/كلمه منفعه الجزء الثالث.jpg",
+"books/كلمه منفعه الجزء الرابع.jpg",
+"books/انطلاق الروح.jpg",
+"books/حياه التواضع والوداعه.jpg",
+"books/الخدمه الروحيه والخادم الروحي الجزء الاول.jpg",
+"books/الخدمه الروحيه والخادم الروحي الجزء الثاني.jpg",
+"books/الخدمه الروحيه والخادم الروحي الجزء الثالث.jpg",
+"books/حياه الشكر.jpg",
+"books/محبه المديح والكرامه.jpg",
+"books/حياه الرجاء.jpg",
+"books/يا رب لماذا (مز 3).jpg",
+"books/التلمذه.jpg",
+"books/الغيره المقدسه.jpg",
+"books/الحروب الروحيه.jpg",
+"books/بدعه الخلاص في لحظه.jpg",
+"books/حروب الشياطين.jpg",
+"books/الرجوع إلى الله.jpg",
+"books/سنوات مع أسئله الناس - الجزء الاول.jpg",
+"books/سنوات مع أسئله الناس - الجزء الثاني.jpg",
+"books/سنوات مع أسئله الناس - الجزء الثالث.jpg",
+"books/سنوات مع أسئله الناس - الجزء الرابع.jpg",
+"books/سنوات مع أسئله الناس - الجزء الخامس.jpg",
+"books/تاملات في مزمور يارب لا تبكتني بغضبك.jpg",
+"books/تاملات في مزامير باكر.jpg",
+"books/تأملات في مزامير وقطع النوم.jpg",
+"books/المحبه قمه الفضائل.jpg",
+"books/من هو الانسان.jpg",
+"books/سنوات مع أسئلة الناس - الجزء السادس.jpg",
+"books/سنوات مع أسئلة الناس - الجزء السابع.jpg",
+"books/سنوات مع أسئلة الناس - الجزء الثامن.jpg",
+"books/الانسان الروحى.jpg",
+"books/كتاب المسابقات - ج1 جزء الجزء الأول الاول.jpg",
+"books/كتاب المسابقات - ج2 جزء الجزء الثاني.jpg",
+"books/كتاب المسابقات - ج3 جزء الجزء الثالث.jpg",
+"books/كتاب المسابقات - ج4 جزء الجزء الرابع.jpg",
+"books/الغضب.jpg",
+"books/ادانة الاخرين.jpg",
+"books/حياه الفضيله والبر.jpg",
+"books/السهر الروحى.jpg",
+"books/مخافه الله.jpg",
+"books/ايات للحفظ.jpg",
+"books/كتاب المسابقات - ج5 جزء الجزء الخامس.jpg",
+"books/كتاب المسابقات - ج6 جزء الجزء السادس.jpg",
+"books/كتاب المسابقات - ج7 جزء الجزء السابع.jpg",
+"books/تاملات في سفر الرويا.jpg",
+"books/التجربه على الجبل.jpg",
+"books/تاملات في خميس العهد.jpg",
+"books/قانون الايمان.jpg",
+"books/سنوات مع اسئله الناس - الجزء التاسع.jpg",
+"books/سنوات مع اسئلة الناس - الجزء العاشر.jpg",
+"books/سنوات مع اسئلة الناس - مجمع - اسئلة لاهوتيه وعقائديه ا.jpg",
+"books/سنوات مع اسئلة الناس - مجمع - اسئلة لاهوتيه وعقائديه ب.jpg",
+"books/النعمه.jpg",
+"books/الله والانسان.jpg",
+"books/الله وكفي.jpg",
+"books/الاسره الروحيه السعيده.jpg",
+"books/مختارات من الادب  والحكمه والامثال الشعبيه.jpg",
+"books/القران والمسيحيه.jpg",
+"books/الكهنوت.jpg",
+"books/لماذا نرفض المطهر.jpg",
+"books/شهود يهوه وهرطقاتهم.jpg",
+"books/لماذا القيامه.jpg",
+"books/الهدوء.jpg",
+"books/الوجود مع الله.jpg",
+"books/كتاب بدع السبتيين الادفنتست.jpg",
+"books/الارواح بين الدين وعلماء الروح.jpg",
+"books/منهج روحي متكامل في روميه 12.jpg",
+"books/ثمر الروح.jpg",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 1- الوصايا الاربع الاولى.jpg",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 2- اكرم اباك وامك.jpg",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 3- لا تقتل.jpg",
+"books/كتاب الوصايا العشر في المفهوم المسيحي 4- الوصايا الاربع الاخيره.jpg",
+"books/تاملات في امثال السيد المسيح.jpg",
+"books/تاملات فى العظه على الجبل.jpg",
+"books/بدع حديثه.jpg",
+"books/اللاهوت المقارن - الجزء 1.jpg",
+"books/كتاب اللاهوت المقارن (1) كيف تم فداء البشر؟.jpg",
+"books/كتاب اللاهوت المقارن (2) حول سر الافخارستيا.jpg",
+"books/كتاب اللاهوت المقارن (3) جسد المسيح والجسد السري!.jpg",
+"books/كتاب اللاهوت المقارن (4) محاربه الناموس والاعمال.jpg",
+"books/كتاب اللاهوت المقارن (5أ) تاليه الانسان!! (الجزء الاول).jpg",
+"books/كتاب اللاهوت المقارن (5ب) تاليه الانسان!! (الجزء الثاني) شركاء الطبيعه الالهيه.jpg",
+"books/كتاب اللاهوت المقارن (6) النقد الكتابي.jpg",
+"books/كتاب اللاهوت المقارن (7) التجسد والمساواة مع المسيح والآب!.jpg",
+"books/تاملات في الجمعه العظيمه.jpg",
+"books/تاملات في اسبوع الالام.jpg",
+"books/ثلاث قصص هادفه.jpg",
+"books/قصه جلسه صاخبه في جامعه سلطان الظلام.jpg",
+"books/سنوات مع اسئله الناس - اسئله خاصه بالكتاب المقدس.jpg"
+]
+}
+//لك القوة والمجد والبركة
+var issearching=0;
+function loadbooks (number){
+    // booksdata.name.length
+    issearching=0;
+    for(var checkifsearch=1;checkifsearch<document.getElementsByClassName('search')[0].getElementsByTagName('button').length;checkifsearch++){
+if(document.getElementsByClassName('search')[0].getElementsByTagName('button')[checkifsearch].style.backgroundColor=="yellow"){
+issearching +=1;
+} 
+}
+
+// correct is 0 not 1
+if (issearching ==0){
+    document.getElementsByClassName('cards')[0].innerHTML="";
+for (var i=(number-1)*21 ; i < (number)*21 ; i++){
+    if (i <booksdata.name.length ){
+    var card = document.createElement('div');
+    card.className = "book-card";
+    document.getElementsByClassName('cards')[0].appendChild(card);
+    var imgcard = document.createElement('img');
+    imgcard.className="bookcardimg";
+    card.appendChild(imgcard);
+    imgcard.src=booksdata.imagesrc[i];
+    imgcard.alt=booksdata.imagesrc[i].toLowerCase().replace('books/',"").replace('.jpg','').replace('ي' , "ى")+" "+"اسم الكتاب:"+ booksdata.name[i] + " "+booksdata.name[i].replace('ي','ى') + " "+booksdata.name[i].replace('ي',"ى").replace('ة',"ه") + " " + booksdata.src[i].replace(".pdf","").replace("books/","") + " " +"سنة الاصدار الإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[i] + " " +"الموضوع:" + booksdata.subject[i];
+
+    var describtion = document.createElement('div');
+    describtion.className = "describtion";
+    card.appendChild(describtion);
+    var bookname = document.createElement('p');
+    bookname.className="describtiontext";
+    describtion.appendChild(bookname);
+    bookname.innerHTML="الاسم:"+booksdata.name[i]; 
+    bookname.addEventListener("click",function(e){
+        document.getElementsByClassName('menuselect')[0].style.display="block";
+       document.getElementsByClassName('selectiondata')[0].innerHTML="name:"+this.innerHTML;
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    });
+    var yearofcreation = document.createElement('p');
+    yearofcreation.className="describtiontext describtiontext1";
+    describtion.appendChild(yearofcreation);
+    yearofcreation.innerHTML="سنة الإصدار:"+booksdata.yearofcreation[i];
+    yearofcreation.addEventListener("click",function(e){
+        document.getElementsByClassName('menuselect')[0].style.display="block";
+        document.getElementsByClassName('selectiondata')[0].innerHTML="yearofcreation:"+this.innerHTML;
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    });
+    var subject = document.createElement('p');
+    subject.className="describtiontext describtiontext1";
+    describtion.appendChild(subject);
+        subject.innerHTML="الموضوع:"+booksdata.subject[i];
+        subject.addEventListener("click",function(e){
+        document.getElementsByClassName('menuselect')[0].style.display="block";
+        document.getElementsByClassName('selectiondata')[0].innerHTML="subject:"+this.innerHTML;
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    });
+    var readbutton = document.createElement('a');
+    readbutton.className="readbutton";
+    describtion.appendChild(readbutton);
+    readbutton.innerHTML="قراءة";
+    readbutton.href=booksdata.src[i];
+    readbutton.target="_blank"
+
+//document.getElementsByClassName('describtiontext')[0].innerHTML="الاسم:"+booksdata.name[i]
+//document.getElementsByClassName('describtiontext')[1].innerHTML="سنة الصنع:"+booksdata.yearofcreation[i]
+//document.getElementsByClassName('describtiontext')[2].innerHTML="الموضوع:"+booksdata.subject[i]
+
+}
+  }
+   
+}
+nothingfound();
+}
+
+function choosecontent(contentnumber,type){
+
+if (type==="subject"){
+  for (var elemnetnumber =0 ; elemnetnumber <  document.getElementsByClassName('menu')[0].getElementsByClassName('choice').length;elemnetnumber++ ){
+    if(elemnetnumber != contentnumber){
+    document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[elemnetnumber].style.backgroundColor="rgb(248, 255, 211)";
+    }  
+    document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[contentnumber].style.backgroundColor="yellow";
+    document.getElementsByClassName('menu')[0].style.display="none";
+if(contentnumber == 0){
+document.getElementsByClassName("contentbook")[0].style.backgroundColor="wheat"
+}
+if(contentnumber != 0){
+document.getElementsByClassName("contentbook")[0].style.backgroundColor="yellow"
+}
+
+} 
+}
+if (type==="yearofcreation"){
+  for (var elemnetnumber =0 ; elemnetnumber <  document.getElementsByClassName('menu')[1].getElementsByClassName('choice').length;elemnetnumber++ ){
+    if(elemnetnumber != contentnumber){
+    document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[elemnetnumber].style.backgroundColor="rgb(248, 255, 211)";
+    }  
+    document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[contentnumber].style.backgroundColor="yellow";
+    document.getElementsByClassName('menu')[1].style.display="none";
+if(contentnumber == 0){
+document.getElementsByClassName("contentbookbyyear")[0].style.backgroundColor="wheat"
+}
+if(contentnumber != 0){
+document.getElementsByClassName("contentbookbyyear")[0].style.backgroundColor="yellow"
+}
+
+} 
+}
+if (type==="alphabet"){
+  for (var elemnetnumber =0 ; elemnetnumber <  document.getElementsByClassName('menu')[2].getElementsByClassName('choice').length;elemnetnumber++ ){
+    if(elemnetnumber != contentnumber){
+    document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[elemnetnumber].style.backgroundColor="rgb(248, 255, 211)";
+    }  
+    document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[contentnumber].style.backgroundColor="yellow";
+    document.getElementsByClassName('menu')[2].style.display="none";
+if(contentnumber == 0){
+document.getElementsByClassName("contentbookbyalphabet")[0].style.backgroundColor="wheat"
+}
+if(contentnumber != 0){
+document.getElementsByClassName("contentbookbyalphabet")[0].style.backgroundColor="yellow"
+}
+
+} 
+
+}
+if (type==="button"){
+    document.getElementsByClassName('menu')[contentnumber].style.display="block";
+    for (var menucount=0;menucount<  document.getElementsByClassName('menu').length;menucount++){
+        if (menucount != contentnumber){
+            document.getElementsByClassName('menu')[menucount].style.display="none";
+        }
+    } 
+}
+}
+
+function gototop(start){
+    //if (window.scrollY== document.getElementsByTagName('body')[0].scrollHeight){
+if (window.scrollY== document.documentElement.scrollHeight - document.documentElement.clientHeight && start!=true){
+ 
+document.getElementsByClassName('gototop')[0].style.display="block"; 
+     
+    }
+    if (window.scrollY< document.documentElement.scrollHeight - document.documentElement.clientHeight && start!=true){
+ 
+ document.getElementsByClassName('gototop')[0].style.display="none"; 
+      
+     }
+     
+if(start == true){
+document.getElementsByClassName('gototop')[0].style.display="none";
+window.scrollTo(0,0); 
+start=false;
+}
+}
+
+//document.addEventListener('click', function(event) {
+ //   if(document.getElementsByClassName('menu')[2].style.display="block"){
+  //  var isClickInsideElement = document.getElementsByClassName('menu')[2].contains(event.target);
+   // if (!isClickInsideElement) {
+    //    document.getElementsByClassName('menu')[2].style.display="none";
+    //}
+//}
+//});
+//var yearofcreationchoose=[];
+//function choose(key,type,number){
+ //   if (type=="yearofcreation"){
+  //      document.getElementsByClassName('cards')[0].innerHTML="";
+//for(var keyinarray=0 ; keyinarray < booksdata.yearofcreation.length; keyinarray++){
+//if (booksdata.yearofcreation[keyinarray]==key){
+
+    //for (var i=(number-1)*21 ; i < (number)*21 ; i++){
+    //if (i <yearofcreation ){
+    //var card = document.createElement('div');
+    //card.className = "book-card";
+    //document.getElementsByClassName('cards')[0].appendChild(card);
+    //var imgcard = document.createElement('img');
+    //imgcard.className="bookcardimg";
+    //card.appendChild(imgcard);
+   // imgcard.src=booksdata.imagesrc[i];
+   // imgcard.alt=booksdata.imagesrc[i].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[i] + " " + booksdata.src[i].replace(".pdf","").replace("books/","") + " " +"سنة الاصدار الإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[i] + " " +"الموضوع:" + booksdata.subject[i];
+    //var describtion = document.createElement('div');
+    //describtion.className = "describtion";
+    //card.appendChild(describtion);
+   // var bookname = document.createElement('p');
+   // bookname.className="describtiontext";
+  //  describtion.appendChild(bookname);
+   // bookname.innerHTML="الاسم:"+booksdata.name[i]; 
+  ///  var yearofcreation = document.createElement('p');
+   // yearofcreation.className="describtiontext describtiontext1";
+   /// describtion.appendChild(yearofcreation);
+   // yearofcreation.innerHTML="سنة الإصدار:"+booksdata.yearofcreation[i];
+   // var subject = document.createElement('p');
+   // subject.className="describtiontext describtiontext1";
+ 
+//    describtion.appendChild(subject);
+  ///      subject.innerHTML="الموضوع:"+booksdata.subject[i];
+   // var readbutton = document.createElement('a');
+   // readbutton.className="readbutton";
+   // describtion.appendChild(readbutton);
+   // readbutton.innerHTML="قراءة";
+  //  readbutton.href=booksdata.src[i];
+ //   readbutton.target="_blank"
+//}
+//}
+
+
+//}
+//}
+  //  }
+//}
+
+
+function elementssize(){
+if (window.innerWidth < 571){
+    for(var i = 0 ; i< document.getElementsByClassName('book-card').length ;i++){
+        document.getElementsByClassName('book-card')[i].style.width="45%"
+
+
+
+    }
+}
+if (window.innerWidth > 570){
+    if (window.innerWidth < 700){
+    for(var i = 0 ; i< document.getElementsByClassName('book-card').length ;i++){
+    document.getElementsByClassName('book-card')[i].style.width="30%";
+    }
+}
+if (window.innerWidth > 700){
+    for(var i = 0 ; i< document.getElementsByClassName('book-card').length ;i++){
+        document.getElementsByClassName('book-card')[i].style.width="25%";
+    }
+}
+}
+if (screen.width < 800){
+        document.getElementsByClassName('gototop')[0].style.left="90%";
+        for(var elementcount=0 ; elementcount<  document.getElementsByClassName('describtiontext').length;elementcount++){
+            document.getElementsByClassName('describtiontext')[elementcount].style.fontsize="14px"
+        
+            document.getElementsByClassName('describtiontext')[elementcount].style.height="13%"
+
+    }
+    for(var elementcount1=0; elementcount1< document.getElementsByClassName('describtiontext1').length;elementcount1++){
+        document.getElementsByClassName('describtiontext')[elementcount1].style.fontsize="13px"
+        document.getElementsByClassName('describtiontext1')[elementcount1].style.height="10%"
+    }
+}
+if (window.innerWidth <650){
+    document.getElementsByClassName('menu')[2].getElementsByClassName('choicesgroup')[0].style.right="75%"
+}
+}
+for(var i = 0 ; i< document.getElementsByClassName('book-card').length ;i++){
+    if(document.getElementsByClassName('book-card')[i + 1] != undefined){
+    var style1=getComputedStyle(document.getElementsByClassName('book-card')[i]).height;
+    var style2=getComputedStyle(document.getElementsByClassName('book-card')[i+1]).height;
+    if(style1 < style2){
+       // document.getElementsByClassName('book-card')[i].height= style2;
+    }
+    }
+}
+
+//var counttrue={};
+function search(){
+   // for(var childs=0;childs <document.getElementsByClassName("book-card").length;childs++){
+    //    document.getElementsByClassName("book-card")[childs].style.display="none";
+    //}
+   // databooksbykey.number=[];
+   //databooksbykey.key=[];
+   //if(databooksbykey.number.length == 0){
+   if(document.getElementsByClassName('contentbook')[0].style.backgroundColor!='yellow'&&document.getElementsByClassName('contentbookbyyear')[0].style.backgroundColor!='yellow'){
+    databooksbykey.key=[];
+    databooksbykey.number=[];
+    document.getElementsByClassName("cards")[0].innerHTML="";
+    var searchwords = document.getElementsByClassName('searchinput')[0].value.trim()//.split(" ");
+    for (var i =0; i<booksdata.name.length;i++){
+  
+      //  var data=booksdata.imagesrc[i].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[i] + " " + booksdata.src[i].replace(".pdf","").replace("books/","") + " " +"سنة الاصدار ��لإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[i] + " " +"الموضوع:" + booksdata.subject[i];
+        var data=booksdata.imagesrc[i].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[i] + " "+booksdata.name[i].replace('ي','ى') + " "+booksdata.name[i].replace('ي',"ى").replace('ة',"ه") + " " + booksdata.src[i].replace(".pdf","").replace("books/","");
+      //  for (var ii=0;ii < searchwords.length;ii++){
+   
+if (data.includes(searchwords)){
+   // counttrue["elementno"+i] +=[true];
+databooksbykey.key.push('subject');
+
+
+databooksbykey.number.push(i);
+
+SearchBy(undefined,undefined,1)
+   // var card = document.createElement('div');
+   // card.className = "book-card";
+  //  document.getElementsByClassName('cards')[0].appendChild(card);
+  //  var imgcard = document.createElement('img');
+   // imgcard.className="bookcardimg";
+   // card.appendChild(imgcard);
+   // imgcard.src=booksdata.imagesrc[i];
+   // imgcard.alt=booksdata.imagesrc[i].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[i] + " " + booksdata.src[i].replace(".pdf","").replace("books/","") + " " +"سنة الا��دار الإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[i] + " " +"الموضوع:" + booksdata.subject[i];
+   // var describtion = document.createElement('div');
+   // describtion.className = "describtion";
+   // card.appendChild(describtion);
+   // var bookname = document.createElement('p');
+   // bookname.className="describtiontext";
+   // describtion.appendChild(bookname);
+   // bookname.innerHTML="الاسم:"+booksdata.name[i]; 
+   // bookname.addEventListener("click",function(e){
+     //   document.getElementsByClassName('menuselect')[0].style.display="block";
+      // document.getElementsByClassName('selectiondata')[0].innerHTML="name:"+this.innerHTML;
+   // document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+   // document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+  //  });
+   // var yearofcreation = document.createElement('p');
+    //yearofcreation.className="describtiontext";
+    //describtion.appendChild(yearofcreation);
+   // yearofcreation.innerHTML="سنة الإصدار:"+booksdata.yearofcreation[i];
+   // yearofcreation.addEventListener("click",function(e){
+   //     document.getElementsByClassName('menuselect')[0].style.display="block";
+    //    document.getElementsByClassName('selectiondata')[0].innerHTML="yearofcreation:"+this.innerHTML;
+    //document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    //document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+   // });
+   // var subject = document.createElement('p');
+   // subject.className="describtiontext";
+   // describtion.appendChild(subject);
+     //   subject.innerHTML="الموضوع:"+booksdata.subject[i];
+       // subject.addEventListener("click",function(e){
+       // document.getElementsByClassName('menuselect')[0].style.display="block";
+      //  document.getElementsByClassName('selectiondata')[0].innerHTML="subject:"+this.innerHTML;
+   // document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+   // document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    // });
+   // var readbutton = document.createElement('a');
+   // readbutton.className="readbutton";
+   // describtion.appendChild(readbutton);
+   // readbutton.innerHTML="قراءة";
+   // readbutton.href=booksdata.src[i];
+    //readbutton.target="_blank";
+//if (i >= 20){
+  //  card.style.display="none";
+//}
+    //i+=1;
+}
+//}
+
+    }
+   //for (var iii =0; iii<booksdata.name.length;iii++){
+//if(counttrue["elementno"+iii].length<counttrue["elementno"+iii+1].length){
+//
+       // } 
+   // }
+
+//for(var menunumber=0 ; menunumber< document.getElementsByClassName('menu')[menunumber].getElementsByClassName('choice').length;menunumber++){
+///for (var choicenumber=0 ; choicenumber< document.getElementsByClassName('menu')[menunumber].getElementsByClassName('choice')[choicenumber];choicenumber++){
+///if( document.getElementsByClassName('menu')[menunumber].getElementsByClassName('choice')[choicenumber].style.backgroundColor=="yellow"){
+  //  document.getElementsByClassName('menu')[menunumber].getElementsByClassName('choice')[choicenumber].click();
+//}
+//}
+//}
+
+   }
+
+   if(document.getElementsByClassName('contentbook')[0].style.backgroundColor=='yellow'||document.getElementsByClassName('contentbookbyyear')[0].style.backgroundColor=='yellow'){
+
+    document.getElementsByClassName("cards")[0].innerHTML="";
+    var searchwords = document.getElementsByClassName('searchinput')[0].value.trim()//.split(" ");
+    for (var i =databooksbykey.number.length -1; i>-1;i--){
+      
+      //  var data=booksdata.imagesrc[i].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[i] + " " + booksdata.src[i].replace(".pdf","").replace("books/","") + " " +"سنة الاصدار ��لإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[i] + " " +"الموضوع:" + booksdata.subject[i];
+        var data=booksdata.imagesrc[databooksbykey.number[i]].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[databooksbykey.number[i]] + " " + booksdata.src[databooksbykey.number[i]].replace(".pdf","").replace("books/","");
+       // for (var ii=0;ii < searchwords.length;ii++){
+       if(!data.includes(searchwords)){
+        databooksbykey.number.splice(i,1);
+        databooksbykey.key.splice(i,1);
+
+       }
+if (data.includes(searchwords)){
+    
+   // counttrue["elementno"+i] +=[true];
+
+    //var card = document.createElement('div');
+    //card.className = "book-card";
+    //document.getElementsByClassName('cards')[0].appendChild(card);
+    //var imgcard = document.createElement('img');
+    //imgcard.className="bookcardimg";
+   // card.appendChild(imgcard);
+    //imgcard.src=booksdata.imagesrc[databooksbykey.number[i]];
+    //imgcard.alt=booksdata.imagesrc[databooksbykey.number[i]].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[databooksbykey.number[i]] + " " + booksdata.src[databooksbykey.number[i]].replace(".pdf","").replace("books/","") + " " +"سنة الا��دار الإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[databooksbykey.number[i]] + " " +"الموضوع:" + booksdata.subject[databooksbykey.number[i]];
+   // var describtion = document.createElement('div');
+    //describtion.className = "describtion";
+   // card.appendChild(describtion);
+  //  var bookname = document.createElement('p');
+   // bookname.className="describtiontext";
+   // describtion.appendChild(bookname);
+    //bookname.innerHTML="الاسم:"+booksdata.name[databooksbykey.number[i]]; 
+    //bookname.addEventListener("click",function(e){
+     //   document.getElementsByClassName('menuselect')[0].style.display="block";
+    //   document.getElementsByClassName('selectiondata')[0].innerHTML="name:"+this.innerHTML;
+  //  document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+  //  document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+   // });
+//var yearofcreation = document.createElement('p');
+ //   yearofcreation.className="describtiontext";
+ //   describtion.appendChild(yearofcreation);
+  //  yearofcreation.innerHTML="سنة الإصدار:"+booksdata.yearofcreation[databooksbykey.number[i]];
+   // yearofcreation.addEventListener("click",function(e){
+       // document.getElementsByClassName('menuselect')[0].style.display="block";
+     //   document.getElementsByClassName('selectiondata')[0].innerHTML="yearofcreation:"+this.innerHTML;
+    //document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+  //  document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    //});
+   // var subject = document.createElement('p');
+   // subject.className="describtiontext";
+    //describtion.appendChild(subject);
+      //  subject.innerHTML="الموضوع:"+booksdata.subject[databooksbykey.number[i]];
+     //   subject.addEventListener("click",function(e){
+    //    document.getElementsByClassName('menuselect')[0].style.display="block";
+    //    document.getElementsByClassName('selectiondata')[0].innerHTML="subject:"+this.innerHTML;
+   // document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+  //  document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+   // });
+   // var readbutton = document.createElement('a');
+   // readbutton.className="readbutton";
+   // describtion.appendChild(readbutton);
+   // readbutton.innerHTML="قراءة";
+    //readbutton.href=booksdata.src[databooksbykey.number[i]];
+   // readbutton.target="_blank";
+ //   i+=1;
+}
+//}
+
+    }
+    SearchBy(undefined,undefined,1)
+
+}
+nothingfound();
+SearchBy(undefined,undefined,1)
+    document.getElementsByClassName('img')[0].style.display="block";
+
+
+}
+
+document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[0].style.backgroundColor="yellow";
+    document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[0].style.backgroundColor="yellow";
+function changepage(number){
+    for(var i =0 ; i < document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page').length ; i++){
+     if(i != number){
+        document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[i].style.backgroundColor="wheat";
+    document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[i].style.backgroundColor="wheat";
+    }
+}
+    document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[number].style.backgroundColor="yellow";
+    document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[number].style.backgroundColor="yellow";
+
+}
+function pagescount(){
+    if (databooksbykey.key.length == 0 ){
+        if(document.getElementsByClassName('contentbook')[0].style.backgroundColor=="yellow"||document.getElementsByClassName('contentbookbyyear')[0].style.backgroundColor=="yellow"){
+            for (var count1=0; count1 <document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page').length;count1++ ){
+document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count1].style.display="none";
+  document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count1].style.display="none";
+
+}
+            for (var count=0; count < Math.ceil(databooksbykey.number.length / 21); count++){
+document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count].style.display="inline";
+  document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count].style.display="inline";
+
+}
+}
+if(document.getElementsByClassName('contentbook')[0].style.backgroundColor!="yellow"&&document.getElementsByClassName('contentbookbyyear')[0].style.backgroundColor!="yellow"){
+  for (var count=0; count < Math.ceil(booksdata.name.length / 21); count++){
+document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count].style.display="inline";
+  document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count].style.display="inline";
+
+}
+}
+    }
+
+
+    if (databooksbykey.number.length > 0 ){
+        for(var count2=0 ; count2 < document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page').length ; count2++){
+            document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count2].style.display="none";
+        document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count2].style.display="none";
+    
+}
+
+  for (var count1=0; count1 < Math.ceil(databooksbykey.number.length / 21); count1++){
+document.getElementsByClassName('pages')[0].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count1].style.display="inline";
+  document.getElementsByClassName('pages')[1].getElementsByClassName('pagesgroup')[0].getElementsByClassName('page')[count1].style.display="inline";
+
+}
+    }
+    
+
+}
+//,1969,1970,1971,1972,1975,1977,1978,1980,1981,1982,1983,1984,1985,1986,1987,1988,1990,1991,1992,1993,1994,1995,1996,1997,1998,2000,2001,2002,2003,2004,2005,2006,2007
+var databooksbykey={
+    number:[],
+    key:[],
+    year:[],
+number1:[],
+sort:[]
+}
+//SearchBy("subject","الكتب الروحية",undefined)
+//SearchBy(undefined,undefined,1)
+
+function SearchBy(type,key,number){
+    //if(databooksbykey.key.length >0){
+      
+  //  if( booksdata.subject[databooksbykey.number[0]].includes(key)){
+   // document.getElementsByClassName('cards')[0].innerHTML="";
+    //console.log('got')
+//databooksbykey.number=[]; databooksbykey.key=[];
+    
+//}
+//}
+if(type=="subject"  && number == undefined){
+if(document.getElementsByClassName("contentbookbyyear")[0].style.backgroundColor!="yellow"){
+
+    databooksbykey.key=[];
+    databooksbykey.number=[];
+    
+    for(var count=0;count<booksdata.subject.length;count++){
+
+        if (booksdata.subject[count].includes(key)){
+databooksbykey.number.push(count);
+
+databooksbykey.key.push('subject');
+}
+
+}
+
+}
+if(document.getElementsByClassName("contentbookbyyear")[0].style.backgroundColor=="yellow"){
+    databooksbykey.key=[];
+    databooksbykey.number=[];
+    
+    for(var count=0;count<booksdata.subject.length;count++){
+
+        if (booksdata.subject[count].includes(key)){
+databooksbykey.number.push(count);
+
+databooksbykey.key.push('subject');
+for(var i=0;i < document.getElementsByClassName('menu')[1].getElementsByClassName('choice').length;i++){
+if(document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[i].style.backgroundColor=="yellow"){
+    
+    document.getElementsByClassName('cards')[0].innerHTML="";
+    for (var indata=databooksbykey.number.length -1;indata > -1; indata--){
+   //     databooksbykey.key+=["yearofcreation"]
+if (booksdata.yearofcreation[databooksbykey.number[indata]]!=document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[i].innerHTML.replace('📖 ',"")){
+    
+ 
+databooksbykey.number.splice(indata,1);
+
+
+}
+}
+
+
+}
+}
+
+}
+
+}
+
+}
+}
+if(databooksbykey.key.includes("subject")==true&& number != undefined&&type==undefined&&key==undefined){
+document.getElementsByClassName('cards')[0].innerHTML="";
+for (var i=(number-1)*21 ; i < (number)*21 ; i++){
+    if (i <databooksbykey.number.length){
+    var card = document.createElement('div');
+    card.className = "book-card";
+    document.getElementsByClassName('cards')[0].appendChild(card);
+    var imgcard = document.createElement('img');
+    imgcard.className="bookcardimg";
+    card.appendChild(imgcard);
+    imgcard.src=booksdata.imagesrc[databooksbykey.number[i]];
+    imgcard.alt=booksdata.imagesrc[databooksbykey.number[i]].toLowerCase().replace('books/',"").replace('.jpg','')+" "+"اسم الكتاب:"+ booksdata.name[databooksbykey.number[i]] + " " + booksdata.src[databooksbykey.number[i]].replace(".pdf","").replace("books/","") + " " +"سنة الاصدار الإصدار الطبعة الاولي:" + " " + booksdata.yearofcreation[databooksbykey.number[i]] + " " +"الموضوع:" + booksdata.subject[databooksbykey.number[i]];
+    var describtion = document.createElement('div');
+    describtion.className = "describtion";
+    card.appendChild(describtion);
+    var bookname = document.createElement('p');
+    bookname.className="describtiontext";
+    describtion.appendChild(bookname);
+    bookname.innerHTML="الاسم:"+booksdata.name[databooksbykey.number[i]]; 
+    bookname.addEventListener("click",function(e){
+        document.getElementsByClassName('menuselect')[0].style.display="block";
+       document.getElementsByClassName('selectiondata')[0].innerHTML="name:"+this.innerHTML;
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    });
+    var yearofcreation = document.createElement('p');
+    yearofcreation.className="describtiontext describtiontext1";
+    describtion.appendChild(yearofcreation);
+    yearofcreation.innerHTML="سنة الإصدار:"+booksdata.yearofcreation[databooksbykey.number[i]];
+    yearofcreation.addEventListener("click",function(e){
+        document.getElementsByClassName('menuselect')[0].style.display="block";
+        document.getElementsByClassName('selectiondata')[0].innerHTML="yearofcreation:"+this.innerHTML;
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    });
+    var subject = document.createElement('p');
+    subject.className="describtiontext describtiontext1";
+    describtion.appendChild(subject);
+        subject.innerHTML="الموضوع:"+booksdata.subject[databooksbykey.number[i]];
+        subject.addEventListener("click",function(e){
+        document.getElementsByClassName('menuselect')[0].style.display="block";
+        document.getElementsByClassName('selectiondata')[0].innerHTML="subject:"+this.innerHTML;
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-x', event.clientX + 'px')
+    document.querySelectorAll('.menuselect')[0].style.setProperty('--mouse-y', event.clientY + 'px')
+   
+    });
+    var readbutton = document.createElement('a');
+    readbutton.className="readbutton";
+    describtion.appendChild(readbutton);
+    readbutton.innerHTML="قراءة";
+    readbutton.href=booksdata.src[databooksbykey.number[i]];
+    readbutton.target="_blank"
+    }
+}
+}
+if(type=="yearofcreation" && databooksbykey.key.includes("subject")==true && key != undefined && number == undefined ){
+    for(var i=0;i<document.getElementsByClassName('menu')[0].getElementsByClassName('choice').length;i++){
+        if(document.getElementsByClassName('choice')[i].style.backgroundColor=='yellow'){
+        document.getElementsByClassName('choice')[i].click();
+        }
+    }
+  for(var ii=0;ii< document.getElementsByClassName('menu')[2].getElementsByClassName('choice').length;ii++){
+      if(document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[ii].style.backgroundColor=='yellow'){
+        document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[ii].click();
+      }
+  }
+    document.getElementsByClassName('cards')[0].innerHTML="";
+   // databooksbykey.key=[];
+    //databooksbykey.number=[];
+   // for(var choicenumber=0 ;choicenumber< document.getElementsByClassName('menu')[0].getElementsByClassName('choice').length;choicenumber++){
+   //   if(document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[choicenumber]=='yellow'){
+     //       document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[choicenumber].click(); 
+  //     }
+   // }
+ 
+    for (var indata=databooksbykey.number.length -1;indata > -1; indata--){
+   //     databooksbykey.key+=["yearofcreation"]
+if (booksdata.yearofcreation[databooksbykey.number[indata]]!=key){
+    
+ 
+databooksbykey.number.splice(indata,1);
+databooksbykey.key.splice(indata,1);
+
+}
+}
+
+}
+if(type=="yearofcreation" && document.getElementsByClassName("contentbook")[0].style.backgroundColor!="yellow" && key != undefined && number == undefined ){
+    databooksbykey.key=[]
+    databooksbykey.number=[]
+    document.getElementsByClassName('cards')[0].innerHTML="";
+    for (var indata=booksdata.yearofcreation.length -1;indata > -1; indata--){
+      //  databooksbykey.key+=["yearofcreation"]
+if (booksdata.yearofcreation[indata]==key){
+    
+ databooksbykey.number.push(indata)
+databooksbykey.key.push("subject")
+}
+}
+ 
+}
+if(type=="alphabet" && databooksbykey.key.includes("subject")==true  && key ==true  && number == undefined  ){
+
+    document.getElementsByClassName('cards')[0].innerHTML="";
+    for (var indata1=0;indata1 < databooksbykey.number.length ;indata1++){
+        for (var indata=0;indata < databooksbykey.number.length ;indata++){
+        
+  if (booksdata.name[databooksbykey.number[indata]]>booksdata.name[databooksbykey.number[indata+1]]){
+
+    var name1=databooksbykey.number[indata];
+var name2=databooksbykey.number[indata+1];
+databooksbykey.number[indata]=name2;
+databooksbykey.number[indata+1]=name1;
+
+
+}
+}
+}   
+}
+if(type=="alphabet" && databooksbykey.key.includes("subject")==false  && key ==true  && number == undefined  ){
+   if(document.getElementsByClassName('contentbook')[0].style.backgroundColor!='yellow'&&document.getElementsByClassName('contentbookbyyear')[0].style.backgroundColor!='yellow'){
+    document.getElementsByClassName('cards')[0].innerHTML="";
+  for (var indata1=0;indata1 < booksdata.name.length ;indata1++){
+    databooksbykey.number.push((indata1))  
+databooksbykey.key.push('subject')
+}
+
+if(databooksbykey.number.length ==127){
+ 
+for (var indata1=0;indata1 < databooksbykey.number.length ;indata1++){
+        for (var indata=0;indata < databooksbykey.number.length ;indata++){
+        
+  if (booksdata.name[databooksbykey.number[indata]]>booksdata.name[databooksbykey.number[indata+1]]){
+
+    var name1=databooksbykey.number[indata];
+var name2=databooksbykey.number[indata+1];
+databooksbykey.number[indata]=name2;
+databooksbykey.number[indata+1]=name1;
+
+
+}
+}
+} 
+}
+   }
+ 
+}
+
+pagescount();
+if (type==undefined&& key==undefined && number== undefined){
+databooksbykey.number=[];
+databooksbykey.key=[];
+    for (var i=1;i<document.getElementsByClassName('search')[0].getElementsByTagName('button').length;i++){
+//two conditions :- one:click yellow buttons ;two: if not exist load all books
+if(document.getElementsByClassName('search')[0].getElementsByTagName('button')[i].style.backgroundColor=="yellow"){
+for(var ii=0;ii<document.getElementsByClassName('choicesgroup')[i-1].getElementsByClassName('choice').length;ii++){
+    if(document.getElementsByClassName('choicesgroup')[i-1].getElementsByClassName('choice')[ii].style.backgroundColor=="yellow"){
+        document.getElementsByClassName('choicesgroup')[i-1].getElementsByClassName('choice')[ii].click();
+
+    }
+}
+}
+if(document.getElementsByClassName('search')[0].getElementsByTagName('button')[i].style.backgroundColor!="yellow"){
+    loadbooks(1);
+    pagescount()
+}
+
+    }
+
+
+
+}
+nothingfound();
+if(document.getElementsByClassName('book-card').length==0 && databooksbykey.key.length > 0){
+for(var i=0 ;i < document.getElementsByClassName('page').length;i++){
+    document.getElementsByClassName('page')[i].style.display='none';
+}
+}
+
+
+}
+function gotopage(pagename){
+if (pagename=="حول"){
+document.getElementsByClassName('books')[0].style.display="none";
+document.getElementsByClassName('gototop')[0].style.display="none";
+document.getElementsByClassName('about')[0].style.display="block";
+}
+if (pagename=="الصفحة الرئيسية"){
+document.getElementsByClassName('books')[0].style.display="block";
+document.getElementsByClassName('gototop')[0].style.display="block";
+document.getElementsByClassName('about')[0].style.display="none";
+}
+}
+
+
+
+document.addEventListener('click', function(event) {
+    var ignoreClickOnMeElement = document.getElementsByClassName('search')[0];
+var elementsearchbutton = document.getElementsByClassName('searchbutton')[0];
+var elementsearchtext = document.getElementsByClassName('searchinput')[0];
+var ignoreClickOnMeElement3 = document.getElementsByClassName('menu')[0];
+var ignoreClickOnMeElement4 = document.getElementsByClassName('menu')[1];
+var ignoreClickOnMeElement5 = document.getElementsByClassName('menu')[2];
+
+    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+    var elementsearchbuttoncheck = elementsearchbutton.contains(event.target);
+    var elementsearchtextcheck = elementsearchtext.contains(event.target);
+    var isClickInsideElement3 = ignoreClickOnMeElement3.contains(event.target);
+    var isClickInsideElement4 = ignoreClickOnMeElement4.contains(event.target);
+    var isClickInsideElement5 = ignoreClickOnMeElement5.contains(event.target);
+
+
+if( document.getElementsByClassName('describtion')[0].contains(event.target)!=undefined){
+
+}
+    //var isClickInsideElement6 = document.getElementsByClassName('describtion')[0].contains(event.target);
+    //var isClickInsideElement7 = document.getElementsByClassName('describtion')[1].contains(event.target);
+    //var isClickInsideElement8 = document.getElementsByClassName('describtion')[2].contains(event.target);
+    //var isClickInsideElement9 = document.getElementsByClassName('describtion')[3].contains(event.target);
+    //var isClickInsideElement10 = document.getElementsByClassName('describtion')[4].contains(event.target);
+    //var isClickInsideElement11 = document.getElementsByClassName('describtion')[5].contains(event.target);
+    //var isClickInsideElement12 = document.getElementsByClassName('describtion')[6].contains(event.target);
+    //var isClickInsideElement13 = document.getElementsByClassName('describtion')[7].contains(event.target);
+    //var isClickInsideElement14 = document.getElementsByClassName('describtion')[8].contains(event.target);
+    //var isClickInsideElement15 = document.getElementsByClassName('describtion')[9].contains(event.target);
+    //var isClickInsideElement16 = document.getElementsByClassName('describtion')[10].contains(event.target);
+    //var isClickInsideElement17 = document.getElementsByClassName('describtion')[11].contains(event.target);
+    //var isClickInsideElement18 = document.getElementsByClassName('describtion')[12].contains(event.target);
+    //var isClickInsideElement19 = document.getElementsByClassName('describtion')[13].contains(event.target);
+    //var isClickInsideElement20 = document.getElementsByClassName('describtion')[14].contains(event.target);
+    //var isClickInsideElement21 = document.getElementsByClassName('describtion')[15].contains(event.target);
+    //var isClickInsideElement22 = document.getElementsByClassName('describtion')[16].contains(event.target);
+    //var isClickInsideElement23 = document.getElementsByClassName('describtion')[17].contains(event.target);
+    //var isClickInsideElement24 = document.getElementsByClassName('describtion')[18].contains(event.target);
+    //var isClickInsideElement25 = document.getElementsByClassName('describtion')[19].contains(event.target);
+    //var isClickInsideElement26 = document.getElementsByClassName('describtion')[20].contains(event.target);
+
+    if(document.getElementsByClassName('describtion')[20]!=undefined){
+    if (! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)&&!document.getElementsByClassName('describtion')[15].contains(event.target)&&!document.getElementsByClassName('describtion')[16].contains(event.target)&&!document.getElementsByClassName('describtion')[17].contains(event.target)&&!document.getElementsByClassName('describtion')[18].contains(event.target)&&! document.getElementsByClassName('describtion')[19].contains(event.target)&&!document.getElementsByClassName('describtion')[20].contains(event.target)  ){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+   
+if(document.getElementsByClassName('describtion')[20]==undefined &&document.getElementsByClassName('describtion')[19]!=undefined){
+    if (! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)&&!document.getElementsByClassName('describtion')[15].contains(event.target)&&!document.getElementsByClassName('describtion')[16].contains(event.target)&&!document.getElementsByClassName('describtion')[17].contains(event.target)&&!document.getElementsByClassName('describtion')[18].contains(event.target)&&! document.getElementsByClassName('describtion')[19].contains(event.target)  ){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if( document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[18]!=undefined){
+    if (! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)&&!document.getElementsByClassName('describtion')[15].contains(event.target)&&!document.getElementsByClassName('describtion')[16].contains(event.target)&&!document.getElementsByClassName('describtion')[17].contains(event.target)&&!document.getElementsByClassName('describtion')[18].contains(event.target)  ){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[17]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)&&!document.getElementsByClassName('describtion')[15].contains(event.target)&&!document.getElementsByClassName('describtion')[16].contains(event.target)&&!document.getElementsByClassName('describtion')[17].contains(event.target)  ){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[16]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)&&!document.getElementsByClassName('describtion')[15].contains(event.target)&&!document.getElementsByClassName('describtion')[16].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[15]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)&&!document.getElementsByClassName('describtion')[15].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[14]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)&&! document.getElementsByClassName('describtion')[14].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if( document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[13]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)&&! document.getElementsByClassName('describtion')[13].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if( document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[12]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)&&! document.getElementsByClassName('describtion')[12].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if( document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[11]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)&&!document.getElementsByClassName('describtion')[11].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined && document.getElementsByClassName('describtion')[10]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)&&!document.getElementsByClassName('describtion')[10].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[9]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)&&!document.getElementsByClassName('describtion')[9].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[8]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)&&!document.getElementsByClassName('describtion')[8].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[7]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)&&!document.getElementsByClassName('describtion')[7].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]&& document.getElementsByClassName('describtion')[6]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)&&!document.getElementsByClassName('describtion')[6].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[6]==undefined&&document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[5]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)&&!document.getElementsByClassName('describtion')[5].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[5]==undefined&&document.getElementsByClassName('describtion')[6]==undefined&&document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[4]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)&&! document.getElementsByClassName('describtion')[4].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if( document.getElementsByClassName('describtion')[4]==undefined&&document.getElementsByClassName('describtion')[5]==undefined&&document.getElementsByClassName('describtion')[6]==undefined&&document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[3]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)&&!document.getElementsByClassName('describtion')[3].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[3]==undefined&& document.getElementsByClassName('describtion')[4]==undefined&&document.getElementsByClassName('describtion')[5]==undefined&&document.getElementsByClassName('describtion')[6]==undefined&&document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[2]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)&&!document.getElementsByClassName('describtion')[2].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[2]==undefined&&document.getElementsByClassName('describtion')[3]==undefined&& document.getElementsByClassName('describtion')[4]==undefined&&document.getElementsByClassName('describtion')[5]==undefined&&document.getElementsByClassName('describtion')[6]==undefined&&document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[1]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)&&!document.getElementsByClassName('describtion')[1].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+if(document.getElementsByClassName('describtion')[1]==undefined&&document.getElementsByClassName('describtion')[2]==undefined&&document.getElementsByClassName('describtion')[3]==undefined&& document.getElementsByClassName('describtion')[4]==undefined&&document.getElementsByClassName('describtion')[5]==undefined&&document.getElementsByClassName('describtion')[6]==undefined&&document.getElementsByClassName('describtion')[7]==undefined&&document.getElementsByClassName('describtion')[8]==undefined&&document.getElementsByClassName('describtion')[9]==undefined&&document.getElementsByClassName('describtion')[10]==undefined&&document.getElementsByClassName('describtion')[11]==undefined&& document.getElementsByClassName('describtion')[12]==undefined&& document.getElementsByClassName('describtion')[13]==undefined&& document.getElementsByClassName('describtion')[14]==undefined&&document.getElementsByClassName('describtion')[15]==undefined&&document.getElementsByClassName('describtion')[16]==undefined&&document.getElementsByClassName('describtion')[17]==undefined&&document.getElementsByClassName('describtion')[18]==undefined&& document.getElementsByClassName('describtion')[19]==undefined&&document.getElementsByClassName('describtion')[20]==undefined&& document.getElementsByClassName('describtion')[0]!=undefined){
+    if ( ! document.getElementsByClassName('describtion')[0].contains(event.target)){
+        document.getElementsByClassName('menuselect')[0].style.display='none'
+    }
+}
+
+    if (!isClickInsideElement){//&&!isClickInsideElement1&&!isClickInsideElement2&&!isClickInsideElement3&&!isClickInsideElement4&&isClickInsideElement5) {
+        document.getElementsByClassName('menu')[0].style.display='none';
+        document.getElementsByClassName('menu')[1].style.display='none';
+        document.getElementsByClassName('menu')[2].style.display='none';
+    }
+   
+    if(elementsearchbuttoncheck==true){
+      document.getElementsByClassName('menu')[0].style.display='none';
+        document.getElementsByClassName('menu')[1].style.display='none';
+        document.getElementsByClassName('menu')[2].style.display='none';
+    }
+   if(elementsearchtextcheck==true){
+      document.getElementsByClassName('menu')[0].style.display='none';
+        document.getElementsByClassName('menu')[1].style.display='none';
+        document.getElementsByClassName('menu')[2].style.display='none';
+      
+    }
+
+});
+
+
+
+
+
+function showalphabetmenu(){
+    document.getElementsByClassName('menu')[2].style.display="block";
+}
+function selectforsearch(){
+    if(document.getElementsByClassName('selectiondata')[0].innerHTML.startsWith('name:')){
+document.getElementsByClassName('searchinput')[0].value=document.getElementsByClassName('selectiondata')[0].innerHTML.replace("name:","").replace("الاسم:","");
+document.getElementsByClassName('searchbutton')[0].click();
+    }
+
+
+
+    if(document.getElementsByClassName('selectiondata')[0].innerHTML.startsWith('yearofcreation:')){
+
+for(var i=0;i< document.getElementsByClassName('menu')[1].getElementsByClassName('choice').length;i++){
+if(document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[i].innerHTML.replace('📖 ',"")==document.getElementsByClassName('selectiondata')[0].innerHTML.replace("yearofcreation:","").replace("سنة الإصدار:","")){
+    document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[i].click();
+}
+}
+    }
+
+
+    if(document.getElementsByClassName('selectiondata')[0].innerHTML.startsWith('subject:')){
+
+for(var i=0;i< document.getElementsByClassName('menu')[0].getElementsByClassName('choice').length;i++){
+if(document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[i].innerHTML.replace('📖 ',"")==document.getElementsByClassName('selectiondata')[0].innerHTML.replace("subject:","").replace("الموضوع:","").replace('الكتب الروحية - ','')){
+    document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[i].click();
+}
+}
+    }
+
+    document.getElementsByClassName('menuselect')[0].style.display="none";
+}
+function AlphabetClose(){
+for (var i=0 ; i< document.getElementsByClassName('choice').length;i++){
+if( document.getElementsByClassName('choice')[i].style.backgroundColor=="yellow"&& i <50){
+    document.getElementsByClassName('choice')[i].click();
+
+}
+
+}
+
+}
+function nothingfound(){
+    if(document.getElementsByClassName('page')[0].style.display=="inline"){
+        document.getElementsByClassName('nothing')[0].style.display="none"
+    }
+    if(document.getElementsByClassName('page')[0].style.display=="none"){
+        document.getElementsByClassName('nothing')[0].style.display="block"
+    }
+    if(document.getElementsByClassName('contentbook')[0].style.backgroundColor!='yellow'&&document.getElementsByClassName('contentbookbyyear')[0].style.backgroundColor!='yellow' &&document.getElementsByClassName('book-card').length==0){
+for(var i=0;i<document.getElementsByClassName('page').length;i++ ){
+    document.getElementsByClassName('page')[i].style.display='none';
+}
+document.getElementsByClassName('nothing')[0].style.display="block"
+    }
+}
+function makedefault(){
+document.getElementsByClassName('menu')[0].getElementsByClassName('choice')[0].click();
+document.getElementsByClassName('menu')[1].getElementsByClassName('choice')[0].click();
+document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[0].click();
+document.getElementsByClassName('searchinput')[0].value='';
+
+
+}
+function backtofirstpage(){
+    if(document.getElementsByClassName('page')[0].style.display=='inline'){
+        document.getElementsByClassName('page')[0].click();
+    }
+}
+function checkifalphabet(){
+    for(var i =0;i<document.getElementsByClassName('menu')[2].getElementsByClassName('choice').length;i++){
+        if(document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[i].style.backgroundColor=='yellow'){
+            document.getElementsByClassName('menu')[2].getElementsByClassName('choice')[i].click();
+        }
+  
+    }
+}
+    </script>
+</body>
+
+
+
+</html>
